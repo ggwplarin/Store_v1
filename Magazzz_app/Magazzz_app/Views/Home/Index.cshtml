@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron ">
+    <h1 class="display-4 text-center">Magazzz</h1>
+    <p class="lead text-center">Уходите</p>
+</div>
+
+<h1>Популярные товары:</h1>
+
+<div name="catalogitems" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
+    @{
+        Random rnd = new Random();
+        for (int q = 0; q < 4; q++)
+        {
+            string src = $"https://img.mvideo.ru/Pdb/small_pic/200/10010{rnd.Next(9)}{rnd.Next(9)}{rnd.Next(9)}b.jpg";
+            <div class="card m-3" style="width: 15rem; ">
+                <img src="@src" class="card-img-top " alt="">
+                <div class="card-body">
+                    <h4 class="">Товар @rnd.Next(12, 32)</h4>
+                    <p class="">Описание товара.</p>
+                    <h6 class="text-black-50 ">@rnd.Next(1000, 9999) РУБ</h6>
+                    <a href="#" class="btn stretched-link w-100 align-self-end btn btn-outline-primary">
+                        Добавить в
+                        корзину
+                    </a>
+                </div>
+            </div>
+        }
+    }
+</div>
